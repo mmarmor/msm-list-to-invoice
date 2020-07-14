@@ -95,7 +95,7 @@ def convert_element(lines, level=1, mydate=''):
     return result
 
 def convert_file(path):
-    root = bs4.BeautifulSoup(open(path), "lxml")
+    root = bs4.BeautifulSoup(open(path, encoding='utf8'), "lxml")
     return convert_element(root.select('html body opml')[0])
 
 def main():
